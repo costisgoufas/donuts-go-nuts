@@ -9,12 +9,14 @@ State state;
 void update_and_draw() {
     struct key_state keys = { false, false, false, false, false, false, false };
 	if(IsKeyDown(KEY_UP)) keys.up = true;
-	else if(IsKeyDown(KEY_DOWN)) keys.down = true;
-	else if(IsKeyDown(KEY_RIGHT)) keys.right = true;
-	else if(IsKeyDown(KEY_LEFT)) keys.left = true;
-	else if(IsKeyDown(KEY_ENTER)) keys.enter = true;
-	else if(IsKeyDown(KEY_P)) keys.p = true;
-	else if(IsKeyDown(KEY_N)) keys.n = true;
+	if(IsKeyDown(KEY_DOWN)) keys.down = true;
+	if(IsKeyDown(KEY_RIGHT)) keys.right = true;
+	if(IsKeyDown(KEY_LEFT)) keys.left = true;
+	if(IsKeyDown(KEY_ENTER)) keys.enter = true;
+	if(IsKeyDown(KEY_P)) keys.p = true;
+	if(IsKeyDown(KEY_N)) keys.n = true;
+	if(IsKeyDown(KEY_Q)) keys.q = true;
+	if(IsKeyDown(KEY_W)) keys.w = true;
 
 	state_update(state,&keys);
 	interface_draw_frame(state);
